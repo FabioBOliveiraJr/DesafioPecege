@@ -1,6 +1,24 @@
+const cores = {
+  fire: '#FDDFDF',
+  grass: '#49d0b0',
+	electric: '#fcc719',
+	water: '#DEF3FD',
+	ground: '#f4e7da',
+	rock: '#d5d5d4',
+	fairy: '#fceaff',
+	poison: '#ba68c8',
+	bug: '#f8d5a3',
+	dragon: '#97b3e6',
+	psychic: '#eaeda1',
+	flying: '#F5F5F5',
+	fighting: '#E6E0D4',
+	normal: '#9faba7',
+  ghost: '#9745a6'
+}
+
 //Chama toda a Pokedex
 async function pokedex() {
-  for (i=1;i<650;i++){
+  for (i=1;i<152;i++){
     await pokeLoad(i);
   }
   //const responsePokedex = await fetch('https://pokeapi.co/api/v2/pokedex/1');
@@ -23,7 +41,8 @@ async function pokedex() {
     if (tipoTamanho == 2) {
       tipo1 = pokemon.types[0].type.name;
       tipo2 = pokemon.types[1].type.name;
-      document.getElementById("pokes").innerHTML+= `<div class="containerPokemon" id="containerPokemon">
+      const corTipo = cores[tipo1]
+      document.getElementById("pokes").innerHTML+= `<div style="background-color:${corTipo};" class="containerPokemon" id="containerPokemon">
         <div class="numeroPoke">
           ${numeroPoke}
         </div>
@@ -43,7 +62,8 @@ async function pokedex() {
       `;
     } else {
       tipo1 = pokemon.types[0].type.name;
-      document.getElementById("pokes").innerHTML+= `<div class="containerPokemon" id="containerPokemon">
+      const corTipo = cores[tipo1]
+      document.getElementById("pokes").innerHTML+= `<div style="background-color:${corTipo};" class="containerPokemon" id="containerPokemon">
         <div class="numeroPoke">
           ${numeroPoke}
         </div>
