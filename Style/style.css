@@ -1,0 +1,61 @@
+body {
+  padding: 20px;
+  font: 1em Helvetica Neue, Helvetica, Arial, sans-serif;
+}
+
+* {box-sizing: border-box;}
+
+p {
+  margin: 0 0 1em 0;
+}
+
+.container {
+  border: 5px solid rgb(111,41,97);
+  border-radius: .5em;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#containerPokemon {
+  margin: 10px;
+  width: 400px;
+  height: 200px;
+  padding: 10px;
+  background-color: rgba(111,41,97,.3);
+  border: 2px solid rgba(111,41,97,.5);
+}
+#imagemPoke{
+  max-width: 200px;
+  max-height: 150px;
+}
+.imagemPoke{
+  float: right;
+}
+#span{
+  height: 50px;
+}
+.item {
+  width: 100px;
+  height: 100px;
+  padding: 10px;
+  background-color: rgba(111,41,97,.3);
+  border: 2px solid rgba(111,41,97,.5);
+}
+
+.tipo1Poke {
+  margin: 5px;
+  width: 100px;
+  border: 2px solid rgba(111,41,97,.5);
+  font-size: 20px;
+  text-align: center;
+}
+
+.tipo2Poke {
+  margin: 5px;
+  width: 100px;
+  border: 2px solid rgba(111,41,97,.5);
+  font-size: 20px;
+  justify-content: space-between;
+}
