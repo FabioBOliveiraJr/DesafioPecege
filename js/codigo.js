@@ -58,10 +58,10 @@ async function pokedex() {
           ${nome}
         </div>
           <div style="background-color:${corTipo1};" class="tipo1Poke">
-            <img src="assets/icons/types/${tipo1}.svg"></img> ${tipo1}
+            <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
           </div>
           <div style="background-color:${corTipo2};" class="tipo2Poke">
-            <img src="assets/icons/types/${tipo2}.svg"></img><span> ${tipo2}</span>
+            <img src="assets/icons/types/${tipo2}.svg"></img><span id="textoTipo"> ${tipo2}</span>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@ async function pokedex() {
           ${nome}
         </div>
         <div class="tipo1Poke">
-          <img src="assets/icons/types/${tipo1}.svg"></img> ${tipo1}
+          <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
         </div>
       </div>
       `;
