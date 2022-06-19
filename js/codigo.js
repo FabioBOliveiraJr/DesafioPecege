@@ -22,7 +22,7 @@ const cores = {
 
 //Chama toda a Pokedex
 async function pokedex() {
-  for (i=1;i<31;i++){
+  for (i=1;i<36;i++){
     await pokeLoad(i);
   }
   //Chama o pokémon a partir do número
@@ -36,9 +36,9 @@ async function pokedex() {
     //Constante com o nome do pokémon
     const nome = pokemon.name;
     const tipoTamanho = pokemon.types.length;
-    console.log(nome);
-    console.log(numeroPoke);
-    console.log(tipoTamanho);
+    //console.log(nome);
+    //console.log(numeroPoke);
+    //console.log(tipoTamanho);
     //Segrega pokémons de 1 e 2 tipos para evitar erros com imagens e texto.
     if (tipoTamanho == 2) {
       tipo1 = pokemon.types[0].type.name;
@@ -47,10 +47,10 @@ async function pokedex() {
       const corTipo2 = cores[tipo2];
       //Gera o código html para a index.html
       document.getElementById("pokes").innerHTML+= `
-      <button type="button" onclick="alert('${pokemon.id}')" style="background-color:${corTipo1};">
+      <button type="button" onclick="console.log(${numeroPoke});carregaPoke(${numeroPoke})" id="botaoPoke" style="background-color:${corTipo1};">
       <div style="background-color:${corTipo1};" class="containerPokemon" id="containerPokemon">
         <div class='imagemPoke'>
-          <img id='imagemPoke' src="assets/svg/${pokemon.id}.svg" alt="${nome}"></img>
+          <img id='imagemPoke' src="assets/svg/${numeroPoke}.svg" alt="${nome}"></img>
         </div>
         <div class="numeroPoke">
           #${numeroPoke} ${nome}
@@ -89,6 +89,12 @@ async function pokedex() {
       `;
     }
   }
+}
+//Carrega o id do pokémon na local storage do navegador
+function carregaPoke (numeroPoke) {
+  var text = numeroPoke;
+  console.log(text);
+  localStorage.setItem('valueText', text);
 }
 //Chama o código
 pokedex()
