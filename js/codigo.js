@@ -47,15 +47,16 @@ async function pokedex() {
       const corTipo2 = cores[tipo2];
       //Gera o código html para a index.html
       document.getElementById("pokes").innerHTML+= `
+      <button type="button" onclick="alert('${pokemon.id}')" style="background-color:${corTipo1};">
       <div style="background-color:${corTipo1};" class="containerPokemon" id="containerPokemon">
         <div class='imagemPoke'>
           <img id='imagemPoke' src="assets/svg/${pokemon.id}.svg" alt="${nome}"></img>
         </div>
         <div class="numeroPoke">
-          #${numeroPoke}
+          #${numeroPoke} ${nome}
         </div>
         <div class="nomePoke">
-          ${nome}
+          
         </div>
           <div style="background-color:${corTipo1};" class="tipo1Poke">
             <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
@@ -65,25 +66,26 @@ async function pokedex() {
           </div>
         </div>
       </div>
+      </button>
       `;
     } else {
       tipo1 = pokemon.types[0].type.name;
       const corTipo1 = cores[tipo1]
       //Gera o código html para a index.html
-      document.getElementById("pokes").innerHTML+= `<div style="background-color:${corTipo1};" class="containerPokemon" id="containerPokemon">
+      document.getElementById("pokes").innerHTML+= `
+      <button type="button" onclick="alert('${pokemon.id}')" style="background-color:${corTipo1};">
+      <div style="background-color:${corTipo1};" class="containerPokemon" id="containerPokemon">
         <div class='imagemPoke'>
           <img id='imagemPoke' src="assets/svg/${pokemon.id}.svg" alt="${nome}"></img>
         </div>
         <div class="numeroPoke">
-          #${numeroPoke}
-        </div>
-        <div class="nomePoke">
-          ${nome}
+          #${numeroPoke} ${nome}
         </div>
         <div class="tipo1Poke">
           <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
         </div>
       </div>
+      </button>
       `;
     }
   }
