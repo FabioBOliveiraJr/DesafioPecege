@@ -40,14 +40,13 @@ const coresEscuras = {
   ice: '#98d8d896',
   ghost: '#71589883'
 }
-
-let page = 1;
-const limit = 30;
-let total = 0;
+let x = 0;
 //Chama toda a Pokedex
-async function pokedex() {
-  for (i=1;i<650;i++){
-    await pokeLoad(i);
+async function pokedex(x) {
+  for (i=1;i<31;i++){
+    await pokeLoad(i+x);
+    console.log(x)
+    console.log(i)
   }
   //Chama o pokémon a partir do número
   async function pokeLoad(numeroPoke) {
@@ -125,4 +124,14 @@ function carregaPoke (numeroPoke) {
   localStorage.setItem('valueText', text);
 }
 //Chama o código
-pokedex()
+pokedex(0)
+let y = 31;
+window.addEventListener('scroll',()=>{
+  //console.log("scrolled", window.scrollY) //scrolled from top
+  //console.log(window.innerHeight) //visible part of screen
+  
+  if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
+    pokedex(y);
+    return y = y+30
+  }
+})
