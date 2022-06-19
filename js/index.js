@@ -19,10 +19,30 @@ const cores = {
   ice: '#98d8d8',
   ghost: '#705898'
 }
-
+//Define cores escuras pro background
+const coresEscuras = {
+  fire: 'darkred',
+  grass: 'darkgreen',
+	electric: 'gold',
+	water: 'darkblue',
+	ground: 'goldenrod',
+	rock:'#8a7208',
+	fairy: '#c26c7e',
+	poison: '#7c2b7c',
+	bug: 'darkolivegreen',
+	dragon: '#4617b4',
+	psychic: '#c92556',
+	flying: '#634da5',
+	fighting: '#a71d16',
+	normal: '#838340',
+  dark: '#5f4431',
+  steel: '#9494ac73',
+  ice: '#98d8d896',
+  ghost: '#71589883'
+}
 //Chama toda a Pokedex
 async function pokedex() {
-  for (i=1;i<36;i++){
+  for (i=1;i<650;i++){
     await pokeLoad(i);
   }
   //Chama o pokémon a partir do número
@@ -30,6 +50,8 @@ async function pokedex() {
     //Cria variaveis para inserir tipos de pokémons
     var tipo1;
     var tipo2;
+    //Cria variável pra colocar a cor do pokémon
+    var bgc;
     //Chama o pokémon
     const responsePokemon = await fetch('https://pokeapi.co/api/v2/pokemon/'+numeroPoke);
     const pokemon = await responsePokemon.json();
@@ -45,10 +67,11 @@ async function pokedex() {
       tipo2 = pokemon.types[1].type.name;
       const corTipo1 = cores[tipo1];
       const corTipo2 = cores[tipo2];
+      bgc = coresEscuras[tipo1];
       //Gera o código html para a index.html
       document.getElementById("pokes").innerHTML+= `
-      <button type="button" onclick="console.log(${numeroPoke});carregaPoke(${numeroPoke})" id="botaoPoke" style="background-color:${corTipo1};">
-      <div style="background-color:${corTipo1};" class="containerPokemon" id="containerPokemon">
+      <button type="button" onclick="carregaPoke(${numeroPoke}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
+      <div style="background-color:${bgc};" class="containerPokemon" id="containerPokemon">
         <div class='imagemPoke'>
           <img id='imagemPoke' src="assets/svg/${numeroPoke}.svg" alt="${nome}"></img>
         </div>
@@ -71,17 +94,18 @@ async function pokedex() {
     } else {
       tipo1 = pokemon.types[0].type.name;
       const corTipo1 = cores[tipo1]
+      bgc = coresEscuras[tipo1];
       //Gera o código html para a index.html
       document.getElementById("pokes").innerHTML+= `
-      <button type="button" onclick="alert('${pokemon.id}')" style="background-color:${corTipo1};">
-      <div style="background-color:${corTipo1};" class="containerPokemon" id="containerPokemon">
+      <button type="button" onclick="carregaPoke(${numeroPoke}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
+      <div style="background-color:${bgc};" class="containerPokemon" id="containerPokemon">
         <div class='imagemPoke'>
           <img id='imagemPoke' src="assets/svg/${pokemon.id}.svg" alt="${nome}"></img>
         </div>
         <div class="numeroPoke">
           #${numeroPoke} ${nome}
         </div>
-        <div class="tipo1Poke">
+        <div class="tipo1Poke" style="background-color:${corTipo1};">
           <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
         </div>
       </div>
