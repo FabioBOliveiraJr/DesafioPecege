@@ -40,6 +40,10 @@ const coresEscuras = {
   ice: '#98d8d896',
   ghost: '#71589883'
 }
+
+let page = 1;
+const limit = 30;
+let total = 0;
 //Chama toda a Pokedex
 async function pokedex() {
   for (i=1;i<650;i++){
