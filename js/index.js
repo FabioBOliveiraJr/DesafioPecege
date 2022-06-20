@@ -40,15 +40,30 @@ const coresEscuras = {
   ice: '#98d8d896',
   ghost: '#71589883'
 }
-let x = 0;
-//Chama toda a Pokedex
-async function pokedex(x) {
+//Variáveis pertinentes ao Infinite Scroll, a scroll1 é para a prmeira vez que o scroll é feito (Na geração da página), a scroll2 é para as outras gerações do scroll e determina o número de pokémons que serão gerados, sempre deverá ter o valor equivalente com o return do if que gera o scroll.
+let scroll1 = 0;
+let scroll2 = 30;
+//Cria o Infinite Scroll
+window.addEventListener('scroll',()=>{
+  //console.log("scrolled", window.scrollY) //scrolled from top
+  //console.log(window.innerHeight) //visible part of screen
+  
+  if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
+    document.getElementById('loading').style.visibility = 'visible';
+    setTimeout(function(){
+      pokedex(scroll2);
+      return scroll2 = scroll2+30
+    },2000);
+  }
+})
+//Chama os pokémons, inicialmente com limitação de 30 para regular o máximo de pokémons aparecem
+async function pokedex(scroll1) {
   for (i=1;i<31;i++){
-    if (i+x >= 649){
+    if (i+scroll1 >= 649){
       break
     }
-    await pokeLoad(i+x);
-    console.log(x)
+    await pokeLoad(i+scroll1);
+    console.log(scroll1)
     console.log(i)
   }
   //Chama o pokémon a partir do número
@@ -88,10 +103,10 @@ async function pokedex(x) {
           
         </div>
           <div style="background-color:${corTipo1};" class="tipo1Poke">
-            <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
+            <img src="assets/icons/types/${tipo1}.svg"></img></br><span id="textoTipo"> ${tipo1}</span>
           </div>
           <div style="background-color:${corTipo2};" class="tipo2Poke">
-            <img src="assets/icons/types/${tipo2}.svg"></img><span id="textoTipo"> ${tipo2}</span>
+            <img src="assets/icons/types/${tipo2}.svg"></img></br><span id="textoTipo"> ${tipo2}</span>
           </div>
         </div>
       </div>
@@ -112,13 +127,14 @@ async function pokedex(x) {
           #${numeroPoke} ${nome}
         </div>
         <div class="tipo1Poke" style="background-color:${corTipo1};">
-          <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
+          <img src="assets/icons/types/${tipo1}.svg"></img></br><span id="textoTipo"> ${tipo1}</span>
         </div>
       </div>
       </button>
       `;
     }
   }
+  document.getElementById('loading').style.visibility = 'hidden';
 }
 //Carrega o id do pokémon na local storage do navegador
 function carregaPoke (numeroPoke) {
@@ -128,15 +144,3 @@ function carregaPoke (numeroPoke) {
 }
 //Chama o código
 pokedex(0)
-let y = 30;
-window.addEventListener('scroll',()=>{
-  //console.log("scrolled", window.scrollY) //scrolled from top
-  //console.log(window.innerHeight) //visible part of screen
-  
-  if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
-    setTimeout(function(){
-      pokedex(y);
-      return y = y+30
-    },2000);
-  }
-})
