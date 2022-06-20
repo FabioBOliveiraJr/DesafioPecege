@@ -70,7 +70,7 @@ window.onload = function () {
         <div class="clearfix" style="background-color:${bgc};">
           <div class="contemOverlay" style="background-color:${bgc};">
             <div class='imagemPaginaPoke'>
-              <img id='imagemPaginaPoke' src="assets/svg/${numeroPoke}.svg" alt="${nome}"></img>
+              <img id='imagemPaginaPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroPoke}.svg" alt="${nome}"></img>
             </div>
             <div id="nomePoke">${numeroPoke} ${nome}</div>
             <div id="pesoPoke">Peso: ${peso}</div>
@@ -94,7 +94,7 @@ window.onload = function () {
       <div class="clearfix" style="background-color:${bgc};">
         <div class="contemOverlay" style="background-color:${bgc};">
           <div class='imagemPaginaPoke'>
-            <img id='imagemPaginaPoke' src="assets/svg/${numeroPoke}.svg" alt="${nome}"></img>
+            <img id='imagemPaginaPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroPoke}.svg" alt="${nome}"></img>
           </div>
           <div id="nomePoke">${numeroPoke} ${nome}</div>
           <div id="pesoPoke">Peso: ${peso}</div>
