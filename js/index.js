@@ -44,6 +44,9 @@ let x = 0;
 //Chama toda a Pokedex
 async function pokedex(x) {
   for (i=1;i<31;i++){
+    if (i+x >= 649){
+      break
+    }
     await pokeLoad(i+x);
     console.log(x)
     console.log(i)
@@ -131,7 +134,9 @@ window.addEventListener('scroll',()=>{
   //console.log(window.innerHeight) //visible part of screen
   
   if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
-    pokedex(y);
-    return y = y+30
+    setTimeout(function(){
+      pokedex(y);
+      return y = y+30
+    },2000);
   }
 })
