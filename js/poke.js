@@ -97,8 +97,8 @@ window.onload = function () {
             <img id='imagemPaginaPoke' src="assets/svg/${numeroPoke}.svg" alt="${nome}"></img>
           </div>
           <div id="nomePoke">${numeroPoke} ${nome}</div>
-          <div id="pesoPoke">${peso}</div>
-          <div id="nomePoke">${altura}</div>
+          <div id="pesoPoke">Peso: ${peso}</div>
+            <div id="nomePoke">Altura: ${altura}</div>
           <div style="background-color:${corTipo1};" class="tipo1Poke">
             <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
           </div>

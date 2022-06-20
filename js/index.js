@@ -79,7 +79,7 @@ async function pokedex(x) {
       <button type="button" onclick="carregaPoke(${numeroPoke}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
       <div style="background-color:${bgc};" class="containerPokemon" id="containerPokemon">
         <div class='imagemPoke'>
-          <img id='imagemPoke' src="assets/svg/${numeroPoke}.svg" alt="${nome}"></img>
+          <img id='imagemPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroPoke}.svg" alt="${nome}"></img>
         </div>
         <div class="numeroPoke">
           #${numeroPoke} ${nome}
@@ -106,7 +106,7 @@ async function pokedex(x) {
       <button type="button" onclick="carregaPoke(${numeroPoke}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
       <div style="background-color:${bgc};" class="containerPokemon" id="containerPokemon">
         <div class='imagemPoke'>
-          <img id='imagemPoke' src="assets/svg/${pokemon.id}.svg" alt="${nome}"></img>
+          <img id='imagemPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroPoke}.svg" alt="${nome}"></img>
         </div>
         <div class="numeroPoke">
           #${numeroPoke} ${nome}
@@ -128,7 +128,7 @@ function carregaPoke (numeroPoke) {
 }
 //Chama o código
 pokedex(0)
-let y = 31;
+let y = 30;
 window.addEventListener('scroll',()=>{
   //console.log("scrolled", window.scrollY) //scrolled from top
   //console.log(window.innerHeight) //visible part of screen
