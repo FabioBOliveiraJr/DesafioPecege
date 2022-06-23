@@ -60,6 +60,7 @@ window.onload = function () {
     const peso = pokemon.weight;
     const altura = pokemon.height;
     const tipoTamanho = pokemon.types.length;
+    const numero = pokemon.id;
     if (tipoTamanho == 2) {
       tipo1 = pokemon.types[0].type.name;
       tipo2 = pokemon.types[1].type.name;
@@ -70,9 +71,9 @@ window.onload = function () {
         <div class="clearfix" style="background-color:${bgc};">
           <div class="contemOverlay" style="background-color:${bgc};">
             <div class='imagemPaginaPoke'>
-              <img id='imagemPaginaPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroPoke}.svg" alt="${nome}"></img>
+              <img id='imagemPaginaPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${numero}.png" alt="${nome}"></img>
             </div>
-            <div id="nomePoke">${numeroPoke} ${nome}</div>
+            <div id="nomePoke">${numero} ${nome}</div>
             <div id="pesoPoke">Peso: ${peso}</div>
             <div id="nomePoke">Altura: ${altura}</div>
             <div id="tiposPaginaPoke">
@@ -94,9 +95,9 @@ window.onload = function () {
       <div class="clearfix" style="background-color:${bgc};">
         <div class="contemOverlay" style="background-color:${bgc};">
           <div class='imagemPaginaPoke'>
-            <img id='imagemPaginaPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroPoke}.svg" alt="${nome}"></img>
+            <img id='imagemPaginaPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${numero}.png" alt="${nome}"></img>
           </div>
-          <div id="nomePoke">${numeroPoke} ${nome}</div>
+          <div id="nomePoke">${numero} ${nome}</div>
           <div id="pesoPoke">Peso: ${peso}</div>
             <div id="nomePoke">Altura: ${altura}</div>
           <div style="background-color:${corTipo1};" class="tipo1Poke">

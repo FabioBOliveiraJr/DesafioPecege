@@ -45,8 +45,6 @@ let scroll1 = 0;
 let scroll2 = 30;
 //Cria o Infinite Scroll
 window.addEventListener('scroll',()=>{
-  //console.log("scrolled", window.scrollY) //scrolled from top
-  //console.log(window.innerHeight) //visible part of screen
   
   if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
     document.getElementById('loading').style.visibility = 'visible';
@@ -59,12 +57,10 @@ window.addEventListener('scroll',()=>{
 //Chama os pokémons, inicialmente com limitação de 30 para regular o máximo de pokémons aparecem
 async function pokedex(scroll1) {
   for (i=1;i<31;i++){
-    if (i+scroll1 >= 649){
+    if (i+scroll1 >= 898){
       break
     }
     await pokeLoad(i+scroll1);
-    console.log(scroll1)
-    console.log(i)
   }
   //Chama o pokémon a partir do número
   async function pokeLoad(numeroPoke) {
@@ -78,10 +74,8 @@ async function pokedex(scroll1) {
     const pokemon = await responsePokemon.json();
     //Constante com o nome do pokémon
     const nome = pokemon.name;
+    const numero = pokemon.id;
     const tipoTamanho = pokemon.types.length;
-    //console.log(nome);
-    //console.log(numeroPoke);
-    //console.log(tipoTamanho);
     //Segrega pokémons de 1 e 2 tipos para evitar erros com imagens e texto.
     if (tipoTamanho == 2) {
       tipo1 = pokemon.types[0].type.name;
@@ -91,22 +85,22 @@ async function pokedex(scroll1) {
       bgc = coresEscuras[tipo1];
       //Gera o código html para a index.html
       document.getElementById("pokes").innerHTML+= `
-      <button type="button" onclick="carregaPoke(${numeroPoke}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
+      <button type="button" onclick="carregaPoke(${numero}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
       <div style="background-color:${bgc};" class="containerPokemon" id="containerPokemon">
         <div class='imagemPoke'>
-          <img id='imagemPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroPoke}.svg" alt="${nome}"></img>
+          <img id='imagemPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${numero}.png" alt="${nome}"></img>
         </div>
         <div class="numeroPoke">
-          #${numeroPoke} ${nome}
+          #${numero} ${nome}
         </div>
         <div class="nomePoke">
           
         </div>
           <div style="background-color:${corTipo1};" class="tipo1Poke">
-            <img src="assets/icons/types/${tipo1}.svg"></img></br><span id="textoTipo"> ${tipo1}</span>
+          <img src="assets/icons/types/${tipo1}.svg"></img></br><span id="textoTipo"> ${tipo1}</span>
           </div>
           <div style="background-color:${corTipo2};" class="tipo2Poke">
-            <img src="assets/icons/types/${tipo2}.svg"></img></br><span id="textoTipo"> ${tipo2}</span>
+          <img src="assets/icons/types/${tipo2}.svg"></img></br><span id="textoTipo"> ${tipo2}</span>
           </div>
         </div>
       </div>
@@ -118,16 +112,16 @@ async function pokedex(scroll1) {
       bgc = coresEscuras[tipo1];
       //Gera o código html para a index.html
       document.getElementById("pokes").innerHTML+= `
-      <button type="button" onclick="carregaPoke(${numeroPoke}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
+      <button type="button" onclick="carregaPoke(${numero}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
       <div style="background-color:${bgc};" class="containerPokemon" id="containerPokemon">
         <div class='imagemPoke'>
-          <img id='imagemPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${numeroPoke}.svg" alt="${nome}"></img>
+          <img id='imagemPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${numero}.png" alt="${nome}"></img>
         </div>
         <div class="numeroPoke">
-          #${numeroPoke} ${nome}
+          #${numero} ${nome}
         </div>
         <div class="tipo1Poke" style="background-color:${corTipo1};">
-          <img src="assets/icons/types/${tipo1}.svg"></img></br><span id="textoTipo"> ${tipo1}</span>
+        <img src="assets/icons/types/${tipo1}.svg"></img></br><span id="textoTipo"> ${tipo1}</span>
         </div>
       </div>
       </button>
@@ -136,10 +130,32 @@ async function pokedex(scroll1) {
   }
   document.getElementById('loading').style.visibility = 'hidden';
 }
+async function pesquisa() {
+  var x = document.getElementById("search").value;
+  x = x.toLowerCase();
+  carregaPoke(x);
+  switch (true) {
+    case x>898:
+      alert('Pokémon inválido, tentar entre 1 e 898');
+    break;
+    case x<=898:
+      location.href='poke.html';
+    break;
+    case typeof x == 'string':
+     await fetch('https://pokeapi.co/api/v2/pokemon/'+x).then(function (data) {
+        if (!data.ok) {
+          alert('Nome de Pokémon inválido');
+        } else {
+          location.href='poke.html';
+        }
+      });
+    break;
+  }
+}
+
 //Carrega o id do pokémon na local storage do navegador
 function carregaPoke (numeroPoke) {
   var text = numeroPoke;
-  console.log(text);
   localStorage.setItem('valueText', text);
 }
 //Chama o código
