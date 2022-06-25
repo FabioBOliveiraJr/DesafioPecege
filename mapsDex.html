@@ -5,6 +5,7 @@
     <title>Pokémon Description</title>
     <link href="style/reset.css" rel="stylesheet">
     <link href="style/style.css" rel="stylesheet">
+    <link href="style/mapsDex.css" rel="stylesheet">
   </head>
   <body>
     <div class="header">
@@ -16,8 +17,19 @@
         <button id="botaoPesquisa" type="button" onclick="pesquisa()" for="search">&#128270;</button>
       </div>
     </div>
-    <script src="js/poke.js"></script>
-    <div id="pokesPage2" class="containerPaginaPoke"></div>
+    <div id="corpoMapa" class="containerCorpoMapa">
+      
+    </div>
+    <div id="pokesMapa" class="containerMapaPoke"></div>
+    <footer>
+      <div id="loading">
+        <div class="pokeball" id="normal"></div>
+        <div class="pokeball" id="great"></div>
+        <div class="pokeball" id="ultra"></div>
+        <div class="pokeball" id="master"></div>
+        <div class="pokeball" id="safari"></div>
+      </div>
+    </footer>
     <div class="footer">
       <div class="social">
         <img id="linkedin" src="assets/icons/socials/In-White-128@2x.png"></img>
@@ -25,6 +37,7 @@
       </div>
       <div id="desafio">Desafio Pecege - Pokedex</div>
     </div>
+    <script src="js/maps.js"></script>
     <script src="js/pesquisa.js"></script>
   </body>
   

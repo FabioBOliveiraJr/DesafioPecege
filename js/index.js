@@ -134,4 +134,4 @@ function carregaPoke (numeroPoke) {
   localStorage.setItem('valueText', text);
 }
 //Chama o código
-pokedex(0)
+pokedex(scroll1)

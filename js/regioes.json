@@ -1,0 +1,47 @@
+{
+  "regions": [
+    {
+      "nada": "pra se ver aqui"
+    },
+    {
+      "nome": "Kanto",
+      "imagem": "mapa-kanto.jpg",
+      "texto": "Perhaps the most famous of the Pokémon regions is Kanto, the setting for the first generation of games. Players traverse Kanto in the original Japanese Red and Green titles, the American Red, Blue, and Yellow releases, FireRed and LeafGreen, and the Let’s Go, Pikachu! and Eevee! titles. It even appears in the Generation 2 games, connected in the east to Johto. Kanto, named after the real-world region of Japan by the same name, features a variety of cities surrounded by mountains and plains, and even features a volcano on Cinnabar Island. Every town in the Pokémon Kanto region is named in reference to a color, like Viridian City, Lavender Town, and others. Players begin their journey in the quiet Pallet Town (a reference to the blank canvas of a painting) and the starter Pokémon offered to players in a basic Poké Ball are Squirtle, Charmander, and Bulbasaur."
+    },
+    {
+      "nome": "Johto",
+      "imagem": "mapa-johto.jpg",
+      "texto": "To the west of Kanto lies the Johto region, the setting for the second generation of Pokémon games, including Silver, Gold, Crystal, and their remakes HeartGold and SoulSilver. It is part of a landmass bordered by coastline at the south, and this region introduced 100 new Pokémon in addition to the previously discovered Gen 1 species. Most of the towns in Johto are named in reference to plants and associated nature, like New Bark Town, Olivine City, and Mahogany Town. Players here were presented the choice of starters Cyndaquil, Totodile, and Chikorita. Much of the overall aesthetic and inspiration for the Johto region comes from traditional Japanese architecture and culture, and the fictional area is inspired by the Kansai region of Japan, which includes Osaka, Kyoto, and Nara. The Kansai region has rich soils, which inspired the berry crop mechanic introduced in this generation of games."
+    },
+    {
+      "nome": "Hoenn",
+      "imagem": "mapa-hoenn.jpg",
+      "texto": "The Hoenn region was separated from the Kanto/Johto landmass as the setting in Generation 3, spanning Ruby, Sapphire, Emerald, and the Omega Ruby and Alpha Sapphire remakes. Based on the island of Kyushu, the region features a great deal of water to balance the landmass, in keeping with the lore of primal Groudon and Kyogre being the titans of land and sea. Most of the towns in Hoenn are immersed in nature, some only being accessible by travel through and even beneath water. Hoenn was a more tropical environment, reflected in many of the types of Pokémon that could be found throughout trainers’ journeys. This game introduced the idea of varying weather patterns, including rainfall, volcanic ash, and bright sunlight. Pokémon like Castform could even react and change form based on the environmental conditions here. Starters in this region included Treecko, Torchic, and Mudkip."
+    },
+    {
+      "nome": "Sinnoh",
+      "imagem": "mapa-sinnoh.jpg",
+      "texto": "To the north of Hoenn, players were introduced to Sinnoh, an island region in Pokémon taking after Japan’s own northernmost territory, Hokkaido. This region is where the Generation 4 Pokémon games took place, including Diamond, Pearl, Platinum, as well as more recent titles Brilliant Diamond, Shining Pearl, and Legends: Arceus. In contrast to its southern partner Hoenn, Sinnoh featured fewer waterways, instead focused on the central landmass divided by the massive Mt. Coronet in the center. To the northeast, the region featured a Battle Zone island. There was also a massive tundra to the very north of the island, and some of the cities in the game are directly based on Hokkaido’s notable locales, like Pokémon’s Jubilife City standing in for Sapporo City. Pokémon starters here include Piplup, Turtwig, and Chimchar. The legendary Pokémon based here were capable of controlling space and time- Dialga, Palkia, and Giratina, created by Arceus, who is said to be the first Pokémon in existence."
+    },
+    {
+      "nome": "Unova",
+      "imagem": "mapa-unova.jpg",
+      "texto": "Moving out of the Japanese-themed regions, Generation 5’s Unova region was actually inspired by New York City, reflected in the metropolitan regions and the more specifically themed Pokémon (such as the fan-favorites Garbodor, a garbage Pokémon, and Vanillite, an ice cream Pokémon). Despite the overall layout being based on New York City, there are landmarks from throughout the state that make up the entire region. In Unova, players can choose to be accompanied by Snivy, Tepig, or Oshawott as their starter. The games Black, Black 2, White, and White 2 take place here, while players explore Manhattan-reminiscent locations like the Battle Subway, the Skyarrow Bridge, and Castelia City. In this region, the whole area changes climate in-game about every 30 days, unlocking changes in Pokémon activity and special events. Spring, summer, autumn, and fall all occur across the entire territory."
+    },
+    {
+      "nome": "Kalos",
+      "imagem": "mapa-kalos.jpg",
+      "texto": "The Kalos region is the sixth region to be introduced, serving as the setting for Pokémon X and Y. Shaped like a five-pointed star, the area is inspired by metropolitan France, with city names like Lumiose and Shalour reflecting this influence. Froakie, Chespin, and Fennekin are the starters featured here. Unlike many of the other regions in earlier games, Kalos is isolated from other regions — in fact, in the Pokémon anime series, it must be reached by airplane. Players in the Kalos region can travel to a Poké Ball factory, a massive facility that produces every collectible Poké Ball used in the Kalos region. Overall, the region’s geography is extremely varied, including oceanic borders to the west and mountains to the east. It features rivers throughout, and it is divided overall into Central, Coastal, and Mountain Kalos, all meeting in the center at Lumiose City."
+    },
+    {
+      "nome": "Alola",
+      "imagem": "mapa-Alola.jpg",
+      "texto": "Alola is a unique region in the Pokémon world, split into four natural islands and one manmade island. Inspired by Hawaii, it is the backdrop for the Generation 7 Pokemon games Sun, Ultra Sun, Moon, and Ultra Moon. Within the game world, it is a popular tourist destination and all towns and cities are very integrated with nature. Starter Pokémon in Alola include Rowlet, Litten, and Popplio. After picking a companion Pokémon, players must travel between the five islands — Melemele, Akala, Ula’ula, Poni, and Aether Paradise (a large floating structure). The region is surrounded by water and features volcanoes, rough terrain, rocky canyons, and dense jungles. Many previously discovered Pokémon have tropical variants, known as their Alolan forms, that can be found on the islands. Unlike other games in the Pokémon franchise, the Sun and Moon titles lacked a traditional Pokémon League staffed by eight gym leaders. Instead, players had to complete trials against Totem Pokémon and then compete with Island Kahunas in each island setting."
+    },
+    {
+      "nome": "Galar",
+      "imagem": "mapa-galar.jpg",
+      "texto": "The eighth region in the Pokémon series, Galar is one of the first to have more of its landmass added after the core title of the game, featured in the Crown Tundra and Isle of Armor expansions. Notably inspired by Great Britain (as if viewed upside-down), Galar incorporates cultural references from England, Wales, and Scotland into its topography and cities. The Pokémon Sword and Shield titles take place in the Galar region, named for the legendary creatures Zacian and Zamazenta, who resemble traditional Coat of Arms creatures and incorporate their namesakes — the sword and shield — into their final forms. Players also met the new starters Sobble, Grookey, and Scorbunny here. Finally, like Alola, several other Pokémon species receive regional variants in this zone, called their Galarian forms."
+    }
+  ]
+}

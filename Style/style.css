@@ -84,10 +84,7 @@ button{
   clear: both;
   display: table;
 }
-.containerPaginaPoke {
-  border: 5px solid rgb(111,41,97);
-  border-radius: .5em;
-}
+
 .contemOverlay {
   background-image: url(../assets/img/overlay.png);
   background-repeat: no-repeat, repeat;

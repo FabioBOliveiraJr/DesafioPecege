@@ -1,0 +1,21 @@
+.containerMapaPoke, .containerCorpoMapa {
+  border: 5px solid rgb(111,41,97);
+  border-radius: .5em;
+}
+
+h1 {
+  align-self: center;
+}
+
+.containerCorpoMapa {
+  text-align: center;
+}
+
+.textoMapa {
+  text-align: left;
+  font-size: 1em;
+}
+
+#mapaRegiao {
+  max-width: 500px;
+}

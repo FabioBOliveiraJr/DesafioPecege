@@ -20,7 +20,7 @@
     <div class="bodyMaps">
       <div class="botoesMaps1">
         <div id="kantoMaps">
-          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'">
+          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'; carregaMapa(1)">
             <div>
               <img id="imagemBotaoMaps" src="assets/img/mapa-kanto.jpg" alt="Imagem de um mapa de pokémon">
             </div>
@@ -28,7 +28,7 @@
           </button>
         </div>
         <div id="johtoMaps">
-          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'">
+          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'; carregaMapa(2)">
             <div>
               <img id="imagemBotaoMaps" src="assets/img/mapa-johto.jpg" alt="Imagem de um mapa de pokémon">
             </div>
@@ -36,7 +36,7 @@
           </button>
         </div>
         <div id="hoennMaps">
-          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'">
+          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'; carregaMapa(3)">
             <div>
               <img id="imagemBotaoMaps" src="assets/img/mapa-hoenn.jpg" alt="Imagem de um mapa de pokémon">
             </div>
@@ -44,7 +44,7 @@
           </button>
         </div>
         <div id="sinnohMaps">
-          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'">
+          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'; carregaMapa(4)">
             <div>
               <img id="imagemBotaoMaps" src="assets/img/mapa-sinnoh.jpg" alt="Imagem de um mapa de pokémon">
             </div>
@@ -54,7 +54,7 @@
       </div>
       <div class="botoesMaps2">
         <div id="unovaMaps">
-          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'">
+          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'; carregaMapa(5)">
             <div>
               <img id="imagemBotaoMaps" src="assets/img/mapa-unova.jpg" alt="Imagem de um mapa de pokémon">
             </div>
@@ -62,7 +62,7 @@
           </button>
         </div>
         <div id="kalosMaps">
-          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'">
+          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'; carregaMapa(6)">
             <div>
               <img id="imagemBotaoMaps" src="assets/img/mapa-kalos.jpg" alt="Imagem de um mapa de pokémon">
             </div>
@@ -70,7 +70,7 @@
           </button>
         </div>
         <div id="alolaMaps">
-          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'">
+          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'; carregaMapa(7)">
             <div>
               <img id="imagemBotaoMaps" src="assets/img/mapa-alola.jpg" alt="Imagem de um mapa de pokémon">
             </div>
@@ -78,7 +78,7 @@
           </button>
         </div>
         <div id="galarMaps">
-          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'">
+          <button type="button" id="botaoMaps" onclick="location.href='mapsDex.html'; carregaMapa(8)">
             <div>
               <img id="imagemBotaoMaps" src="assets/img/mapa-galar.jpg" alt="Imagem de um mapa de pokémon">
             </div>
@@ -98,6 +98,7 @@
     <script>
       function carregaMapa (regiao) {
         var text = regiao;
+        console.log(text);
         localStorage.setItem('valueText', text);
       }
     </script>

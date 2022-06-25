@@ -63,7 +63,7 @@ window.onload = function () {
     const altura = pokemon.height;
     const tipoTamanho = pokemon.types.length;
     const numero = pokemon.id;
-    var descricao = '';
+    var descricao;
     //Arruma o problema com as línguagens não estarem na mesma entrada de cada API
     switch (true) {
       case desc.flavor_text_entries[0].language.name == 'en':
@@ -76,9 +76,6 @@ window.onload = function () {
         descricao = desc.flavor_text_entries[7].flavor_text;
       break;
     }
-    
-    //descricao = desc.flavor_text_entries[1].flavor_text;
-
     //Tira o caracter \f da descrição
     descricao = descricao.replace(/\f/, '');
     if (tipoTamanho == 2) {
