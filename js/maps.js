@@ -1,49 +1,8 @@
-//Cores de fundo por tipo
-const cores = {
-  fire: '#f08030',
-  grass: '#78c850',
-	electric: '#F8d030',
-	water: '#6890f0',
-	ground: '#e0c068',
-	rock: '#b8a038',
-	fairy: '#ee99ac',
-	poison: '#a040a0',
-	bug: '#a8b820',
-	dragon: '#7038f8',
-	psychic: '#f85888',
-	flying: '#a890f0',
-	fighting: '#c03028',
-	normal: '#A8A878',
-  dark: '#705848',
-  steel: '#b8b8d0',
-  ice: '#98d8d8',
-  ghost: '#705898'
-}
-//Define cores escuras pro background
-const coresEscuras = {
-  fire: 'darkred',
-  grass: 'darkgreen',
-	electric: 'gold',
-	water: 'darkblue',
-	ground: 'goldenrod',
-	rock:'#8a7208',
-	fairy: '#c26c7e',
-	poison: '#7c2b7c',
-	bug: 'darkolivegreen',
-	dragon: '#4617b4',
-	psychic: '#c92556',
-	flying: '#634da5',
-	fighting: '#a71d16',
-	normal: '#838340',
-  dark: '#5f4431',
-  steel: '#9494ac73',
-  ice: '#98d8d896',
-  ghost: '#71589883'
-}
 //Gera uma função para o carregamento da página.
 window.onload = function () {
   //Chama a variável numeroPoke que está armazenada no localStorage
-  var numeroPoke = localStorage.getItem('valueText');
+  var regiao = localStorage.getItem('valueText');
+  console.log(numeroPoke);
   //Chama o pokémon a partir do número
   async function pokeLoad(numeroPoke) {
     //Cria variaveis para inserir tipos de pokémons
@@ -63,22 +22,7 @@ window.onload = function () {
     const altura = pokemon.height;
     const tipoTamanho = pokemon.types.length;
     const numero = pokemon.id;
-    var descricao = '';
-    //Arruma o problema com as línguagens não estarem na mesma entrada de cada API
-    switch (true) {
-      case desc.flavor_text_entries[0].language.name == 'en':
-        descricao = desc.flavor_text_entries[0].flavor_text;
-      break;
-      case desc.flavor_text_entries[6].language.name == 'en':
-        descricao = desc.flavor_text_entries[6].flavor_text;
-      break;      
-      case desc.flavor_text_entries[7].language.name == 'en':
-        descricao = desc.flavor_text_entries[7].flavor_text;
-      break;
-    }
-    
-    //descricao = desc.flavor_text_entries[1].flavor_text;
-
+    var descricao = desc.flavor_text_entries[0].flavor_text;
     //Tira o caracter \f da descrição
     descricao = descricao.replace(/\f/, '');
     if (tipoTamanho == 2) {
@@ -104,7 +48,7 @@ window.onload = function () {
                 <img src="assets/icons/types/${tipo2}.svg"></img><span id="textoTipo"> ${tipo2}</span>
               </div>
               <div id ="descricaoPoke">
-                <p>${descricao}</p>
+                <o>${descricao}</p>
               </div>
             </div>
           </div>
@@ -125,9 +69,6 @@ window.onload = function () {
           <div id="nomePoke">Height: ${altura}</div>
           <div style="background-color:${corTipo1};" class="tipo1Poke">
             <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
-          </div>
-          <div id ="descricaoPoke">
-            <p>${descricao}</p>
           </div>
         </div>
       </div>
