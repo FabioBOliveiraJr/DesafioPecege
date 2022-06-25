@@ -194,8 +194,10 @@ footer {
   display: flex;
   align-items: center;
   padding: 5px;
+  padding-top: 3px;
+  padding-bottom: 3px;
   bottom: 0;
-  position: fixed, absolute;
+  position: absolute, fixed;
   width: 100%;
 }
 
