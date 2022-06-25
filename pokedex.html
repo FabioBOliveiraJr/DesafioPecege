@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<HTML>
+<meta charset="UTF-8"/>
+
+<TITLE> Pokédex</title>
+<link href="style/reset.css" rel="stylesheet">
+<link href="style/style.css" rel="stylesheet">
+
+<body>
+  <div class="header">
+    <img id="titulo" src="assets/img/title.png"></img>
+    <h1><a href="index.html">Home</a></h1>
+    <h1><a href="about.html">About</a></h1>
+    <div class="search">
+      <input type="text" id="search" placeholder="Search by Pokemon name or Id">
+      <button id="botaoPesquisa" type="button" onclick="pesquisa()" for="search">&#128270;</button>
+    </div>
+  </div>
+  <script src="js/index.js"></script>
+  <script src="js/pesquisa.js"></script>
+  <div id="pokes" class="container"></div>
+  <footer>
+    <div id="loading">
+      <div class="pokeball" id="normal"></div>
+      <div class="pokeball" id="great"></div>
+      <div class="pokeball" id="ultra"></div>
+      <div class="pokeball" id="master"></div>
+      <div class="pokeball" id="safari"></div>
+    </div>
+  </footer>
+  <div class="footer">
+    <div class="social">
+      <img id="linkedin" src="assets/icons/socials/In-White-128@2x.png"></img>
+      <img id="github" src="assets/icons/socials/GitHub-Mark-Light-120px-plus.png"></img>
+    </div>
+    <div id="desafio">Desafio Pecege - Pokedex</div>
+  </div>
+</body>
+
+</html>

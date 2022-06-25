@@ -107,8 +107,8 @@ window.onload = function () {
             <img id='imagemPaginaPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${numero}.png" alt="${nome}"></img>
           </div>
           <div id="nomePoke">${numero} ${nome}</div>
-          <div id="pesoPoke">Peso: ${peso}</div>
-            <div id="nomePoke">Altura: ${altura}</div>
+          <div id="pesoPoke">Weight: ${peso}</div>
+          <div id="nomePoke">Height: ${altura}</div>
           <div style="background-color:${corTipo1};" class="tipo1Poke">
             <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
           </div>

@@ -2,16 +2,65 @@
 <HTML>
   <head>
     <meta charset="UTF-8"/>
-    <title>Descrição Pokémon</title>
+    <title>Home</title>
     <link href="style/reset.css" rel="stylesheet">
     <link href="style/style.css" rel="stylesheet">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
   </head>
   <body>
-    <!-- <h1> Pokédex </h1>
-    <script src="js/poke.js"></script>
-    <div id="pokesPage2" class="containerPaginaPoke"></div> -->
-    <p id="flavor"></p>
-    <script src="js/teste.js"></script>
+    <div class="header">
+      <img id="titulo" src="assets/img/title.png"></img>
+      <h1><a href="index.html">Home</a></h1>
+      <h1><a href="about.html">About</a></h1>
+      <div class="search">
+        <input type="text" id="search" placeholder="Search by Pokemon name or Id">
+        <button id="botaoPesquisa" type="button" onclick="pesquisa()" for="search">&#128270;</button>
+      </div>
+    </div>
+    <div class="bodyIndex">
+      <div class="botoesIndex">
+        <div id="mapaIndex">
+          <button type="button" id="botaoMapaIndex">
+            <div>
+              <img id="imagemMapaIndex" src="assets/img/mapa-unova.jpg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">MAPS</div>
+          </button>
+        </div>
+        <div id="tipoIndex">
+          <button type="button" id="botaoTipoIndex">
+            <div>
+              <img id="imagemTipoIndex" src="assets/img/botao-tipo.png" alt="Imagem representando os tipos">
+            </div>
+            <div class="textoBotoes">TYPES</div>
+          </button>
+        </div>
+        <div id="pokedexIndex">
+          <button type="button" id="botaoPokedexIndex" onclick="location.href='pokedex.html'">
+            <div>
+              <img id="imagemPokedexIndex" src="assets/img/pokedex-icon.png" alt="Imagem representando os tipos">
+            </div>
+            <div class="textoBotoes">POKEDEX</div>
+          </button>
+        </div>
+      </div>
+      <div class="textoIndex">
+        Created by Satoshi Tajiri, the Japanese cartoon saga Pokémon was a real fever in the 1990s, a reality that resulted in the creation of several games and movies in the series. Speaking specifically about the games, the ones that stood out the most were the RPG games made for the platform Game Boy and Game Boy Advance: Pokémon Yellow, Blue, Red, SIlver, Gold, Crystal, Ruby and Sapphire.<br><br>
+
+        As a young man, the monster's creator, Satoshi Tajiri, was very fond of observing and studying insects. Thus, based on the concept of metamorphosis, the Japanese endeared a world in which players battled each other using monsters that, over time and with experience gains, evolved and became more powerful. It was from this idea that Pokémon was born in 1994.<br><br>
+
+        Game Boy's collection of games along with other platform-style titles, such as N64's Pokémon Stadium, for example, have made Pokémon the second best-selling game in game history, being surpassed only by Mario Bros. We can't talk about the History of Pokémon either without mentioning the impressive success of the newest game in the franchise. Using the concept of augmented reality and developed for mobile phones, Pokemon Go has already simply become the biggest mobile game in U.S. history.
+      </div>
+    </div>
+    <div class="footer">
+      <div class="social">
+        <a href="https://www.linkedin.com/in/f%C3%A1bio-balbino-oliveira-junior-233569165/"><img id="linkedin" src="assets/icons/socials/In-White-128@2x.png"></img></a>
+        <a href="https://github.com/FabioBOliveiraJr"><img id="github" src="assets/icons/socials/GitHub-Mark-Light-120px-plus.png"></img></a>
+      </div>
+      <div id="desafio">Desafio Pecege - Pokedex</div>
+    </div>
+    <script src="js/pesquisa.js"></script>
   </body>
   
 </html>
