@@ -16,7 +16,18 @@
         <button id="botaoPesquisa" type="button" onclick="pesquisa()" for="search">&#128270;</button>
       </div>
     </div>
-      Work in progress
+    <div class="bodyTypes">
+      <div class="botoesTypes1">
+        <div id="kantoTypes">
+          <button type="button" id="botaoTypes" onclick="location.href='TypesDex.html'; carregaTipo(1)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/Bug.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">KANTO</div>
+          </button>
+        </div>
+      </div>
+    </div>
     <div class="footer">
       <div class="social">
         <img id="linkedin" src="assets/icons/socials/In-White-128@2x.png"></img>
@@ -25,6 +36,13 @@
       <div id="desafio">Desafio Pecege - Pokedex</div>
     </div>
     <script src="js/pesquisa.js"></script>
+    <script>
+      function carregaTipo (tipo) {
+        var text = tipo;
+        console.log(text);
+        localStorage.setItem('valueText', text);
+      }
+    </script>
   </body>
   
 </html>

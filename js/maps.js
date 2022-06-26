@@ -108,7 +108,7 @@ window.onload = function () {
     const responsePokedex = await fetch('https://pokeapi.co/api/v2/pokedex/'+dex);
     const pokedex = await responsePokedex.json();
     const maxPokes = pokedex.pokemon_entries.length;
-    console.log(pokedex.name)
+    console.log(pokedex)
     for (i=0;i<30;i++){
       var nome = pokedex.pokemon_entries[i+scroll1].pokemon_species.name
       if (i+scroll1 >= maxPokes){

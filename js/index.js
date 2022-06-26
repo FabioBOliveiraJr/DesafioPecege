@@ -46,18 +46,20 @@ let scroll2 = 30;
 //Cria o Infinite Scroll
 window.addEventListener('scroll',()=>{
   
-  if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
-    document.getElementById('loading').style.visibility = 'visible';
-    setTimeout(function(){
-      pokedex(scroll2);
-      return scroll2 = scroll2+30
-    },2000);
-  }
+  // if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
+  //   document.getElementById('loading').style.visibility = 'visible';
+  //   setTimeout(function(){
+  //     pokedex(scroll2);
+  //     return scroll2 = scroll2+30
+  //   },2000);
+  // }
 })
 //Chama os pokémons, inicialmente com limitação de 30 para regular o máximo de pokémons aparecem
 async function pokedex(scroll1) {
-  for (i=1;i<31;i++){
-    if (i+scroll1 >= 898){
+  await fetch('https://pokeapi.co/api/v2/pokemon?&limit=1154').then(response => {return response.json()}).then(async function (pokedexNacional) {
+  for (i=0;i<1154;i++){
+    var url = pokedexNacional.results[i].url;
+    if (i+scroll1 >= 1154){
       break
     }
     await pokeLoad(i+scroll1);
@@ -70,7 +72,7 @@ async function pokedex(scroll1) {
     //Cria variável pra colocar a cor do pokémon
     var bgc;
     //Chama o pokémon
-    const responsePokemon = await fetch('https://pokeapi.co/api/v2/pokemon/'+numeroPoke);
+    const responsePokemon = await fetch(url);
     const pokemon = await responsePokemon.json();
     //Constante com o nome do pokémon
     const nome = pokemon.name;
@@ -126,7 +128,7 @@ async function pokedex(scroll1) {
     }
   }
   document.getElementById('loading').style.visibility = 'hidden';
-}
+})}
 
 //Carrega o id do pokémon na local storage do navegador
 function carregaPoke (numeroPoke) {
