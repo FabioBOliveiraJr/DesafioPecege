@@ -46,19 +46,19 @@ let scroll2 = 30;
 //Cria o Infinite Scroll
 window.addEventListener('scroll',()=>{
   
-  // if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
-  //   document.getElementById('loading').style.visibility = 'visible';
-  //   setTimeout(function(){
-  //     pokedex(scroll2);
-  //     return scroll2 = scroll2+30
-  //   },2000);
-  // }
+  if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
+    document.getElementById('loading').style.visibility = 'visible';
+    setTimeout(function(){
+      pokedex(scroll2);
+      return scroll2 = scroll2+30
+    },2000);
+  }
 })
 //Chama os pokémons, inicialmente com limitação de 30 para regular o máximo de pokémons aparecem
 async function pokedex(scroll1) {
   await fetch('https://pokeapi.co/api/v2/pokemon?&limit=1154').then(response => {return response.json()}).then(async function (pokedexNacional) {
-  for (i=0;i<1154;i++){
-    var url = pokedexNacional.results[i].url;
+  for (i=0;i<30;i++){
+    var url = pokedexNacional.results[i+scroll1].url;
     if (i+scroll1 >= 1154){
       break
     }

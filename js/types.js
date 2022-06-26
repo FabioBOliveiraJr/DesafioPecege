@@ -1,52 +1,18 @@
 //Gera uma função para o carregamento da página.
 window.onload = function () {
   //Chama a variável numeroPoke que está armazenada no localStorage
-  var regiao = localStorage.getItem('valueText');
-  // console.log(regiao);
-  //Define o número da pokedex de cada região com todos os pokémons
-  var dex
-  switch (true) {
-    case regiao == 1:
-      dex = 2;
-    break;
-    case regiao == 2:
-      dex = 7;
-    break;
-    case regiao == 3:
-      dex = 4;
-    break;
-    case regiao == 4:
-      dex = 5;
-    break;
-    case regiao == 5:
-      dex = 9;
-    break;
-    case regiao == 6:
-      dex = 12;
-    break;
-    case regiao == 7:
-      dex = 21;
-    break;
-    case regiao == 8:
-      dex = 27;
-    break;
-  }
+  var type = localStorage.getItem('valueText');
   //Chama o pokémon a partir do número
-  async function geraConteudoNormal (regiao) {
-    await fetch('js/regioes.json').then(response => {return response.json()}).then(regions => {
-      const nome = regions.regions[regiao].nome;
-      const imagem = regions.regions[regiao].imagem;
-      const texto = regions.regions[regiao].texto
-      document.getElementById('corpoMapa').innerHTML=`
+  async function geraConteudoNormal (type) {
+    await fetch('https://pokeapi.co/api/v2/type/'+type).then(response => {return response.json()}).then(types => {
+      const nome = types.name;
+      document.getElementById('corpoTypes').innerHTML=`
       <h1 style="color: black">${nome}</h1>
-      <img id="mapaRegiao" src="assets/img/${imagem}" alt="Mapa de ${nome}">
-      <div class="textoMapa">
-        <p style="color: teal;">${texto}</p>
       </div>
       `
     })
   }
-  geraConteudoNormal(regiao)
+  geraConteudoNormal(type)
   //Cores de fundo por tipo
   const cores = {
     fire: '#f08030',
@@ -98,19 +64,19 @@ window.onload = function () {
     if(window.scrollY + window.innerHeight >= document.documentElement.scrollHeight){
       document.getElementById('loading').style.visibility = 'visible';
       setTimeout(function(){
-        pokedex(scroll2, dex);
+        pokedex(scroll2, type);
         return scroll2 = scroll2+30
       },2000);
     }
   })
   //Chama os pokémons, inicialmente com limitação de 30 para regular o máximo de pokémons aparecem
-  async function pokedex(scroll1, dex) {
-    const responsePokedex = await fetch('https://pokeapi.co/api/v2/pokedex/'+dex);
+  async function pokedex(scroll1, type) {
+    const responsePokedex = await fetch('https://pokeapi.co/api/v2/type/'+type);
     const pokedex = await responsePokedex.json();
-    const maxPokes = pokedex.pokemon_entries.length;
+    const maxPokes = pokedex.pokemon.length;
     console.log(pokedex)
     for (i=0;i<30;i++){
-      var nome = pokedex.pokemon_entries[i+scroll1].pokemon_species.name
+      var nome = pokedex.pokemon[i+scroll1].pokemon.name
       if (i+scroll1 >= maxPokes){
         break
       }
@@ -128,7 +94,7 @@ window.onload = function () {
       const pokemon = await responsePokemon.json();
       //Constante com o nome do pokémon
       var nome = nomePoke
-      const numero = pokedex.pokemon_entries[contador].entry_number;
+      const numero = pokemon.id
       const tipoTamanho = pokemon.types.length;
       //Segrega pokémons de 1 e 2 tipos para evitar erros com imagens e texto.
       if (tipoTamanho == 2) {
@@ -138,7 +104,7 @@ window.onload = function () {
         const corTipo2 = cores[tipo2];
         bgc = coresEscuras[tipo1];
         //Gera o código html para a index.html
-        document.getElementById("pokesMapa").innerHTML+= `
+        document.getElementById("pokesTypes").innerHTML+= `
         <button type="button" onclick="carregaPoke(${pokemon.id}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
         <div style="background-color:${bgc};" class="containerPokemon" id="containerPokemon">
           <div class='imagemPoke'>
@@ -162,7 +128,7 @@ window.onload = function () {
         const corTipo1 = cores[tipo1]
         bgc = coresEscuras[tipo1];
         //Gera o código html para a index.html
-        document.getElementById("pokesMapa").innerHTML+= `
+        document.getElementById("pokesTypes").innerHTML+= `
         <button type="button" onclick="carregaPoke(${pokemon.id}); location.href='poke.html'" id="botaoPoke" style="background-color:${bgc};">
         <div style="background-color:${bgc};" class="containerPokemon" id="containerPokemon">
           <div class='imagemPoke'>
@@ -188,5 +154,5 @@ window.onload = function () {
     localStorage.setItem('valueText', text);
   }
   //Chama o código
-  pokedex(scroll1, dex)
+  pokedex(scroll1, type)
 }

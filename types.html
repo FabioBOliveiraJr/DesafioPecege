@@ -5,6 +5,7 @@
     <title>Pokémon Description</title>
     <link href="style/reset.css" rel="stylesheet">
     <link href="style/style.css" rel="stylesheet">
+    <link href="style/types.css" rel="stylesheet">
   </head>
   <body>
     <div class="header">
@@ -17,13 +18,153 @@
       </div>
     </div>
     <div class="bodyTypes">
-      <div class="botoesTypes1">
-        <div id="kantoTypes">
-          <button type="button" id="botaoTypes" onclick="location.href='TypesDex.html'; carregaTipo(1)">
+      <div class="botoesTypes">
+        <div id="normalTypes">
+          <button type="button" class="botaoTypes" id="botaoNormalTypes" onclick=" carregaTipo(1)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/Normal.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">NORMAL</div>
+          </button>
+        </div>
+        <div id="fightingTypes">
+          <button type="button" class="botaoTypes" id="botaoFightingTypes" onclick=" carregaTipo(2)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/Fighting.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">FIGHTING</div>
+          </button>
+        </div>
+        <div id="flyingTypes">
+          <button type="button" class="botaoTypes" id="botaoFlyingTypes" onclick=" carregaTipo(3)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/flying.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">FLYING</div>
+          </button>
+        </div>
+        <div id="poisonTypes">
+          <button type="button" class="botaoTypes" id="botaoPoisonTypes" onclick=" carregaTipo(4)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/poison.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">POISON</div>
+          </button>
+        </div>
+        <div id="groundTypes">
+          <button type="button" class="botaoTypes" id="botaoGroundTypes" onclick=" carregaTipo(5)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/ground.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">GROUND</div>
+          </button>
+        </div>
+        <div id="rockTypes">
+          <button type="button" class="botaoTypes" id="botaoRockTypes" onclick=" carregaTipo(6)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/rock.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">ROCK</div>
+          </button>
+        </div>
+      </div>
+      <div class="botoesTypes">
+        <div id="bugTypes">
+          <button type="button" class="botaoTypes" id="botaoBugTypes" onclick=" carregaTipo(7)">
             <div>
               <img id="imagemBotaoTypes" src="assets/icons/types/Bug.svg" alt="Imagem de um mapa de pokémon">
             </div>
-            <div class="textoBotoes">KANTO</div>
+            <div class="textoBotoes">BUG</div>
+          </button>
+        </div>
+        <div id="ghostTypes">
+          <button type="button" class="botaoTypes" id="botaoGhostTypes" onclick=" carregaTipo(8)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/ghost.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">GHOST</div>
+          </button>
+        </div>
+        <div id="steelTypes">
+          <button type="button" class="botaoTypes" id="botaoSteelTypes" onclick=" carregaTipo(9)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/steel.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">STEEL</div>
+          </button>
+        </div>
+        <div id="fireTypes">
+          <button type="button" class="botaoTypes" id="botaoFireTypes" onclick=" carregaTipo(10)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/fire.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">FIRE</div>
+          </button>
+        </div>
+        <div id="grassTypes">
+          <button type="button" class="botaoTypes" id="botaoGrassTypes" onclick=" carregaTipo(12)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/grass.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">GRASS</div>
+          </button>
+        </div>
+        <div id="waterTypes">
+          <button type="button" class="botaoTypes" id="botaoWaterTypes" onclick=" carregaTipo(11)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/water.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">WATER</div>
+          </button>
+        </div>
+      </div>
+      <div class="botoesTypes">
+        <div id="electricTypes">
+          <button type="button" class="botaoTypes" id="botaoElectricTypes" onclick=" carregaTipo(13)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/electric.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">ELECTRIC</div>
+          </button>
+        </div>
+        <div id="psychicTypes">
+          <button type="button" class="botaoTypes" id="botaoPsychicTypes" onclick=" carregaTipo(14)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/psychic.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">PSYCHIC</div>
+          </button>
+        </div>
+        <div id="iceTypes">
+          <button type="button" class="botaoTypes" id="botaoIceTypes" onclick=" carregaTipo(15)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/ice.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">ICE</div>
+          </button>
+        </div>
+        <div id="dragonTypes">
+          <button type="button" class="botaoTypes" id="botaoDragonTypes" onclick=" carregaTipo(16)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/dragon.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">DRAGON</div>
+          </button>
+        </div>
+        <div id="darkTypes">
+          <button type="button" class="botaoTypes" id="botaoDarkTypes" onclick=" carregaTipo(17)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/dark.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">DARK</div>
+          </button>
+        </div>
+        <div id="fairyTypes">
+          <button type="button" class="botaoTypes" id="botaoFairyTypes" onclick="carregaTipo(18)">
+            <div>
+              <img id="imagemBotaoTypes" src="assets/icons/types/fairy.svg" alt="Imagem de um mapa de pokémon">
+            </div>
+            <div class="textoBotoes">FAIRY</div>
           </button>
         </div>
       </div>
@@ -41,6 +182,7 @@
         var text = tipo;
         console.log(text);
         localStorage.setItem('valueText', text);
+        location.href='TypesDex.html'
       }
     </script>
   </body>

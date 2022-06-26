@@ -1,0 +1,50 @@
+#botaoFireTypes{
+  background-color: #f08030}
+#botaoGrassTypes{
+  background-color: #78c850}
+#botaoElectricTypes{
+	background-color: #F8d030}
+#botaoWaterTypes{
+	background-color: #6890f0}
+#botaoGroundTypes{
+	background-color: #e0c068}
+#botaoRockTypes{
+	background-color: #b8a038}
+#botaoFairyTypes{
+	background-color: #ee99ac}
+#botaoPoisonTypes{
+	background-color: #a040a0}
+#botaoBugTypes{
+	background-color: #a8b820}
+#botaoDragonTypes{
+	background-color: #7038f8}
+#botaoPsychicTypes{
+	background-color: #f85888}
+#botaoFlyingTypes{
+	background-color: #a890f0}
+#botaoFightingTypes{
+	background-color: #c03028}
+#botaoNormalTypes{
+	background-color: #A8A878}
+#botaoDarkTypes{
+  background-color: #705848}
+#botaoSteelTypes{
+  background-color: #b8b8d0}
+#botaoIceTypes{
+  background-color: #98d8d8}
+#botaoGhostTypes{
+  background-color: #705898}
+.botaoTypes {
+  width: 120px;
+  height: 120px;
+  border-radius: 30%;
+  margin: 20px;
+}
+
+.botoesTypes {
+  align-items: top;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.17em;
+  margin-bottom: 0.17em;
+}
