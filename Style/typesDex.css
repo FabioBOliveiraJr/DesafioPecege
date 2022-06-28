@@ -1,0 +1,10 @@
+#corpoTypes {
+  align-items: center;
+  text-align: center;
+}
+#pokesTypes {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}

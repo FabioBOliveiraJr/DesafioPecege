@@ -1,18 +1,3 @@
-//Gera uma função para o carregamento da página.
-window.onload = function () {
-  //Chama a variável numeroPoke que está armazenada no localStorage
-  var type = localStorage.getItem('valueText');
-  //Chama o pokémon a partir do número
-  async function geraConteudoNormal (type) {
-    await fetch('https://pokeapi.co/api/v2/type/'+type).then(response => {return response.json()}).then(types => {
-      const nome = types.name;
-      document.getElementById('corpoTypes').innerHTML=`
-      <h1 style="color: black">${nome}</h1>
-      </div>
-      `
-    })
-  }
-  geraConteudoNormal(type)
   //Cores de fundo por tipo
   const cores = {
     fire: '#f08030',
@@ -55,6 +40,79 @@ window.onload = function () {
     ice: '#98d8d896',
     ghost: '#71589883'
   }
+
+//Gera uma função para o carregamento da página.
+window.onload = function () {
+  //Chama a variável numeroPoke que está armazenada no localStorage
+  var type = localStorage.getItem('valueText');
+  //Chama o pokémon a partir do número
+  async function geraConteudoNormal (type) {
+    await fetch('https://pokeapi.co/api/v2/type/'+type).then(response => {return response.json()}).then(types => {
+      const nome = types.name;
+      var relacoes = {
+        no_to: ['Nobody'],
+        no_from: ['Nobody'],
+        double_from: ['Nobody'],
+        double_to: ['Nobody'],
+        half_from: ['Nobody'],
+        half_to: ['Nobody']
+      }
+      switch (true) {
+        case types.damage_relations.no_damage_to.length != 0:
+          relacoes.no_to = [];
+          for(i=0;i<types.damage_relations.no_damage_to.length;i++) {
+            var name = types.damage_relations.no_damage_to[i].name
+            relacoes.no_to.push(name);
+          }
+        case types.damage_relations.no_damage_from.length != 0:
+          relacoes.no_from = [];
+          for(i=0;i<types.damage_relations.no_damage_from.length;i++) {
+            var name = types.damage_relations.no_damage_from[i].name
+            relacoes.no_from.push(name);
+          }
+        case types.damage_relations.double_damage_from.length != 0:
+          relacoes.double_from = [];
+          for(i=0;i<types.damage_relations.double_damage_from.length;i++) {
+            var name = types.damage_relations.double_damage_from[i].name
+            relacoes.double_from.push(name);
+          }
+        case types.damage_relations.double_damage_to.length != 0:
+          relacoes.double_to = [];
+          for(i=0;i<types.damage_relations.double_damage_to.length;i++) {
+            var name = types.damage_relations.double_damage_to[i].name
+            relacoes.double_to.push(name);
+          }
+        case types.damage_relations.half_damage_from.length != 0:
+          relacoes.half_from = [];
+          for(i=0;i<types.damage_relations.half_damage_from.length;i++) {
+            var name = types.damage_relations.half_damage_from[i].name
+            relacoes.half_from.push(name);
+          }
+        case types.damage_relations.half_damage_to.length != 0:
+          relacoes.half_to = [];
+          for(i=0;i<types.damage_relations.half_damage_to.length;i++) {
+            var name = types.damage_relations.half_damage_to[i].name
+            relacoes.half_to.push(name);
+          }
+      }
+      
+      
+      
+      document.getElementById('corpoTypes').innerHTML=`
+      <h1 style="color: black">${nome}</h1>
+      </br></br>
+      <div class="relations">
+        <p>Deals double damage to: ${relacoes.double_to}</p>
+        <p>Recives double damage from: ${relacoes.double_from}</p>
+        <p>Deals half damage to: ${relacoes.half_to}</p>
+        <p>Recives half damage from: ${relacoes.half_from}</p>
+        <p>Deals no damage to: ${relacoes.no_to}</p>
+        <p>Recives no damage from: ${relacoes.no_from}</p>
+      </div>
+      `
+    })
+  }
+  geraConteudoNormal(type)
   //Variáveis pertinentes ao Infinite Scroll, a scroll1 é para a prmeira vez que o scroll é feito (Na geração da página), a scroll2 é para as outras gerações do scroll e determina o número de pokémons que serão gerados, sempre deverá ter o valor equivalente com o return do if que gera o scroll.
   let scroll1 = 0;
   let scroll2 = 30;
@@ -74,7 +132,6 @@ window.onload = function () {
     const responsePokedex = await fetch('https://pokeapi.co/api/v2/type/'+type);
     const pokedex = await responsePokedex.json();
     const maxPokes = pokedex.pokemon.length;
-    console.log(pokedex)
     for (i=0;i<30;i++){
       var nome = pokedex.pokemon[i+scroll1].pokemon.name
       if (i+scroll1 >= maxPokes){

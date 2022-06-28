@@ -27,3 +27,10 @@ function carregaPoke (numeroPoke) {
   var text = numeroPoke;
   localStorage.setItem('valueText', text);
 }
+
+var barra = document.getElementById("search");
+barra.addEventListener("keypress", function(enter){
+  if (enter.key === "Enter"){
+    enter.preventDefault();
+    pesquisa()}
+})
