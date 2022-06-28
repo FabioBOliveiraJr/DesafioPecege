@@ -50,67 +50,108 @@ window.onload = function () {
     await fetch('https://pokeapi.co/api/v2/type/'+type).then(response => {return response.json()}).then(types => {
       const nome = types.name;
       var relacoes = {
-        no_to: ['Nobody'],
-        no_from: ['Nobody'],
-        double_from: ['Nobody'],
-        double_to: ['Nobody'],
-        half_from: ['Nobody'],
-        half_to: ['Nobody']
+        no_to: [`<div style="background-color:black;" class="tipoTexto">
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo" style="color:white"> Nobody</span>
+        </div>`],
+        no_from: [`<div style="background-color:black;" class="tipoTexto">
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        </div>`],
+        double_from: [`<div style="background-color:black;" class="tipoTexto">
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        </div>`],
+        double_to: [`<div style="background-color:black;" class="tipoTexto">
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        </div>`],
+        half_from: [`<div style="background-color:black;" class="tipoTexto">
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        </div>`],
+        half_to: [`<div style="background-color:black;" class="tipoTexto">
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        </div>`]
       }
       switch (true) {
         case types.damage_relations.no_damage_to.length != 0:
           relacoes.no_to = [];
           for(i=0;i<types.damage_relations.no_damage_to.length;i++) {
             var name = types.damage_relations.no_damage_to[i].name
-            relacoes.no_to.push(name);
+            relacoes.no_to.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+            </div>`);
           }
         case types.damage_relations.no_damage_from.length != 0:
           relacoes.no_from = [];
           for(i=0;i<types.damage_relations.no_damage_from.length;i++) {
             var name = types.damage_relations.no_damage_from[i].name
-            relacoes.no_from.push(name);
+            relacoes.no_from.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+            </div>`);
           }
         case types.damage_relations.double_damage_from.length != 0:
           relacoes.double_from = [];
           for(i=0;i<types.damage_relations.double_damage_from.length;i++) {
             var name = types.damage_relations.double_damage_from[i].name
-            relacoes.double_from.push(name);
+            relacoes.double_from.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+            </div>`);
           }
         case types.damage_relations.double_damage_to.length != 0:
           relacoes.double_to = [];
           for(i=0;i<types.damage_relations.double_damage_to.length;i++) {
             var name = types.damage_relations.double_damage_to[i].name
-            relacoes.double_to.push(name);
+            relacoes.double_to.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+            </div>`);
           }
         case types.damage_relations.half_damage_from.length != 0:
           relacoes.half_from = [];
           for(i=0;i<types.damage_relations.half_damage_from.length;i++) {
             var name = types.damage_relations.half_damage_from[i].name
-            relacoes.half_from.push(name);
+            relacoes.half_from.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+            </div>`);
           }
         case types.damage_relations.half_damage_to.length != 0:
           relacoes.half_to = [];
           for(i=0;i<types.damage_relations.half_damage_to.length;i++) {
             var name = types.damage_relations.half_damage_to[i].name
-            relacoes.half_to.push(name);
+            relacoes.half_to.push(
+            `<div style="background-color:${cores[name]};" class="tipoTexto">
+            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+            </div>`);
           }
       }
-      
-      
       
       document.getElementById('corpoTypes').innerHTML=`
       <h1 style="color: black">${nome}</h1>
       </br></br>
-      <div class="relations">
-        <p>Deals double damage to: ${relacoes.double_to}</p>
-        <p>Recives double damage from: ${relacoes.double_from}</p>
-        <p>Deals half damage to: ${relacoes.half_to}</p>
-        <p>Recives half damage from: ${relacoes.half_from}</p>
-        <p>Deals no damage to: ${relacoes.no_to}</p>
-        <p>Recives no damage from: ${relacoes.no_from}</p>
+      <div id="containerRelations">
+        <div class="relations">
+          Deals double damage to: ${relacoes.double_to}
+        </div>
+        <div class="relations">
+          Recives double damage from: ${relacoes.double_from}
+        </div>
+        <div class="relations">
+          Deals half damage to: ${relacoes.half_to}
+        </div>
+        <div class="relations">
+          Recives half damage from: ${relacoes.half_from}
+        </div>
+        <div class="relations">
+          Deals no damage to: ${relacoes.no_to}
+        </div>
+        <div class="relations">
+          Recives no damage from: ${relacoes.no_from}
+        </div>
       </div>
       `
     })
+    function carregaTipo (tipo) {
+      var text = tipo;
+      console.log(text);
+      localStorage.setItem('valueText', text);
+      location.href='TypesDex.html'
+    }
   }
   geraConteudoNormal(type)
   //Variáveis pertinentes ao Infinite Scroll, a scroll1 é para a prmeira vez que o scroll é feito (Na geração da página), a scroll2 é para as outras gerações do scroll e determina o número de pokémons que serão gerados, sempre deverá ter o valor equivalente com o return do if que gera o scroll.
