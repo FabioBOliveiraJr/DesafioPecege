@@ -54,72 +54,76 @@ window.onload = function () {
         <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo" style="color:white"> Nobody</span>
         </div>`],
         no_from: [`<div style="background-color:black;" class="tipoTexto">
-        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo" style="color:white"> Nobody</span>
         </div>`],
         double_from: [`<div style="background-color:black;" class="tipoTexto">
-        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo" style="color:white"> Nobody</span>
         </div>`],
         double_to: [`<div style="background-color:black;" class="tipoTexto">
-        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo" style="color:white"> Nobody</span>
         </div>`],
         half_from: [`<div style="background-color:black;" class="tipoTexto">
-        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo" style="color:white"> Nobody</span>
         </div>`],
         half_to: [`<div style="background-color:black;" class="tipoTexto">
-        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo"> Nobody</span>
+        <img src="assets/icons/types/nobody.png" id="nobody"></img></br><span id="textoTipo" style="color:white"> Nobody</span>
         </div>`]
       }
-      switch (true) {
-        case types.damage_relations.no_damage_to.length != 0:
-          relacoes.no_to = [];
-          for(i=0;i<types.damage_relations.no_damage_to.length;i++) {
-            var name = types.damage_relations.no_damage_to[i].name
-            relacoes.no_to.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
-            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
-            </div>`);
-          }
-        case types.damage_relations.no_damage_from.length != 0:
-          relacoes.no_from = [];
-          for(i=0;i<types.damage_relations.no_damage_from.length;i++) {
-            var name = types.damage_relations.no_damage_from[i].name
-            relacoes.no_from.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
-            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
-            </div>`);
-          }
-        case types.damage_relations.double_damage_from.length != 0:
-          relacoes.double_from = [];
-          for(i=0;i<types.damage_relations.double_damage_from.length;i++) {
-            var name = types.damage_relations.double_damage_from[i].name
-            relacoes.double_from.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
-            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
-            </div>`);
-          }
-        case types.damage_relations.double_damage_to.length != 0:
-          relacoes.double_to = [];
-          for(i=0;i<types.damage_relations.double_damage_to.length;i++) {
-            var name = types.damage_relations.double_damage_to[i].name
-            relacoes.double_to.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
-            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
-            </div>`);
-          }
-        case types.damage_relations.half_damage_from.length != 0:
-          relacoes.half_from = [];
-          for(i=0;i<types.damage_relations.half_damage_from.length;i++) {
-            var name = types.damage_relations.half_damage_from[i].name
-            relacoes.half_from.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
-            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
-            </div>`);
-          }
-        case types.damage_relations.half_damage_to.length != 0:
-          relacoes.half_to = [];
-          for(i=0;i<types.damage_relations.half_damage_to.length;i++) {
-            var name = types.damage_relations.half_damage_to[i].name
-            relacoes.half_to.push(
-            `<div style="background-color:${cores[name]};" class="tipoTexto">
-            <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
-            </div>`);
-          }
-      }
+      //No to
+      if(types.damage_relations.no_damage_to.length !=0){
+        relacoes.no_to=[]
+      for(i=0;i<types.damage_relations.no_damage_to.length;i++) {
+        var name = types.damage_relations.no_damage_to[i].name
+        relacoes.no_to.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+        <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+        </div>`);
+      }}
+      //No from
+      if (types.damage_relations.no_damage_from.length!=0){
+        relacoes.no_from=[]
+      for(i=0;i<types.damage_relations.no_damage_from.length;i++) {
+        var name = types.damage_relations.no_damage_from[i].name
+        relacoes.no_from.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+        <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+        </div>`);
+      }}
+      //Double from
+      if (types.damage_relations.double_damage_from!=0){
+        relacoes.double_from=[]
+      for(i=0;i<types.damage_relations.double_damage_from.length;i++) {
+        var name = types.damage_relations.double_damage_from[i].name
+        relacoes.double_from.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+        <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+        </div>`);
+      }}
+      //Double to
+      if(types.damage_relations.double_damage_to.length!=0){
+        relacoes.double_to=[]
+      for(i=0;i<types.damage_relations.double_damage_to.length;i++) {
+        var name = types.damage_relations.double_damage_to[i].name
+        relacoes.double_to.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+        <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+        </div>`);
+      }}
+      //Half From
+      if(types.damage_relations.half_damage_from.length!=0){
+        relacoes.half_from=[]
+      for(i=0;i<types.damage_relations.half_damage_from.length;i++) {
+        var name = types.damage_relations.half_damage_from[i].name
+        relacoes.half_from.push(`<div style="background-color:${cores[name]};" class="tipoTexto">
+        <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+        </div>`);
+      }}
+      //Half To
+      if (types.damage_relations.half_damage_to!=0){
+        relacoes.half_to=[]
+      for(i=0;i<types.damage_relations.half_damage_to.length;i++) {
+        var name = types.damage_relations.half_damage_to[i].name
+        relacoes.half_to.push(
+        `<div style="background-color:${cores[name]};" class="tipoTexto">
+        <img src="assets/icons/types/${name}.svg"></img></br><span id="textoTipo"> ${name}</span>
+        </div>`);
+      }}
       
       document.getElementById('corpoTypes').innerHTML=`
       <h1 style="color: black">${nome}</h1>
@@ -142,7 +146,7 @@ window.onload = function () {
         </div>
         <div class="relations">
           Recives no damage from: ${relacoes.no_from}
-        </div>
+        </div>;
       </div>
       `
     })

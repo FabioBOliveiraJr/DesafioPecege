@@ -3,29 +3,29 @@
 #botaoGrassTypes{
   background-color: #78c850}
 #botaoElectricTypes{
-	background-color: #F8d030}
+  background-color: #F8d030}
 #botaoWaterTypes{
-	background-color: #6890f0}
+  background-color: #6890f0}
 #botaoGroundTypes{
-	background-color: #e0c068}
+  background-color: #e0c068}
 #botaoRockTypes{
-	background-color: #b8a038}
+  background-color: #b8a038}
 #botaoFairyTypes{
-	background-color: #ee99ac}
+  background-color: #ee99ac}
 #botaoPoisonTypes{
-	background-color: #a040a0}
+  background-color: #a040a0}
 #botaoBugTypes{
-	background-color: #a8b820}
+  background-color: #a8b820}
 #botaoDragonTypes{
-	background-color: #7038f8}
+  background-color: #7038f8}
 #botaoPsychicTypes{
-	background-color: #f85888}
+  background-color: #f85888}
 #botaoFlyingTypes{
-	background-color: #a890f0}
+  background-color: #a890f0}
 #botaoFightingTypes{
-	background-color: #c03028}
+  background-color: #c03028}
 #botaoNormalTypes{
-	background-color: #A8A878}
+  background-color: #A8A878}
 #botaoDarkTypes{
   background-color: #705848}
 #botaoSteelTypes{
@@ -39,6 +39,12 @@
   height: 120px;
   border-radius: 30%;
   margin: 20px;
+}
+
+#botaoFireTypes:hover{ opacity: 1;}
+.hover{opacity: 0.75;}
+.hover:hover {
+  opacity: 1;
 }
 
 .botoesTypes {
