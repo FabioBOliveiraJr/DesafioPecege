@@ -23,7 +23,6 @@ button{
   font-size: 30px;
 }
 .container {
-  border: 5px solid rgb(111,41,97);
   border-radius: .5em;
   padding: 10px;
   display: flex;
@@ -73,9 +72,10 @@ button{
 #imagemPaginaPoke {
   float: right;
 }
+.paginaPoke{
+  font-size: 2em;
+}
 .clearfix {
-  border: 5px solid rgb(111,41,97);
-  border-radius: .5em;
   background-image: url(../assets/img/overlay.png);
   background-repeat: no-repeat, repeat;
 }
@@ -88,6 +88,7 @@ button{
 .contemOverlay {
   background-image: url(../assets/img/overlay.png);
   background-repeat: no-repeat, repeat;
+  padding: 15px;
 }
 #overlay {
   display: block;

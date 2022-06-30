@@ -93,15 +93,17 @@ window.onload = function () {
             <div class='imagemPaginaPoke'>
               <img id='imagemPaginaPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${numero}.png" alt="${nome}"></img>
             </div>
-            <div id="nomePoke">${numero} ${nome}</div>
+            <div class="paginaPoke">
+            <div id="nomePoke">#${numero} ${nome}</div>
             <div id="pesoPoke">Weight: ${peso}</div>
-            <div id="nomePoke">Height: ${altura}</div>
+            <div id="alturaPoke">Height: ${altura}</div>
             <div id="tiposPaginaPoke">
               <div style="background-color:${corTipo1};" class="tipo1Poke">
                 <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span> 
               </div>
               <div style="background-color:${corTipo2};" class="tipo2Poke">
                 <img src="assets/icons/types/${tipo2}.svg"></img><span id="textoTipo"> ${tipo2}</span>
+              </div>
               </div>
               <div id ="descricaoPoke">
                 <p>${descricao}</p>
@@ -120,14 +122,16 @@ window.onload = function () {
           <div class='imagemPaginaPoke'>
             <img id='imagemPaginaPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${numero}.png" alt="${nome}"></img>
           </div>
+          <div class="paginaPoke">
           <div id="nomePoke">${numero} ${nome}</div>
           <div id="pesoPoke">Weight: ${peso}</div>
-          <div id="nomePoke">Height: ${altura}</div>
+          <div id="alturaPoke">Height: ${altura}</div>
           <div style="background-color:${corTipo1};" class="tipo1Poke">
             <img src="assets/icons/types/${tipo1}.svg"></img><span id="textoTipo"> ${tipo1}</span>
           </div>
           <div id ="descricaoPoke">
             <p>${descricao}</p>
+          </div>
           </div>
         </div>
       </div>

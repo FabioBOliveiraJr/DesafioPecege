@@ -145,14 +145,18 @@ window.onload = function () {
             <img id='imagemPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="${nome}"></img>
           </div>
           <div class="numeroPoke">
-            #${numero} ${nome}
+            Regional #${numero}
           </div>
+          <div class="numeroPoke">National #${pokemon.id}</div>
+          <div class="numeroPoke">${nome}</div>
+          <div style="display: flex;">
             <div style="background-color:${corTipo1};" class="tipo1Poke">
             <img src="assets/icons/types/${tipo1}.svg"></img></br><span id="textoTipo"> ${tipo1}</span>
             </div>
             <div style="background-color:${corTipo2};" class="tipo2Poke">
             <img src="assets/icons/types/${tipo2}.svg"></img></br><span id="textoTipo"> ${tipo2}</span>
             </div>
+          </div>
           </div>
         </div>
         </button>
@@ -169,8 +173,10 @@ window.onload = function () {
             <img id='imagemPoke' src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="${nome}"></img>
           </div>
           <div class="numeroPoke">
-            #${numero} ${nome}
+            Regional #${numero}
           </div>
+          <div class="numeroPoke">National #${pokemon.id}</div>
+          <div class="numeroPoke">${nome}</div>
           <div class="tipo1Poke" style="background-color:${corTipo1};">
           <img src="assets/icons/types/${tipo1}.svg"></img></br><span id="textoTipo"> ${tipo1}</span>
           </div>
